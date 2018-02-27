@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Compra de Producto</title>
+        <link href="/WsClient/css/modulo.css" rel="stylesheet" 
+              type="text/css" />  
+    </h:head>
+    <h:body>
+        <h:form prependId="false">
+            <h:panelGroup id='panelMain' layout="block">
+                <h:panelGrid class='gridMain' 
+                             id="grids"
+                             columns="2" border="1" >
+                    <f:facet name="header">
+                        <h:outputText value="Compra de Productos"/>
+                    </f:facet>
+                    <h:outputLabel value="Valor producto 1"/>
+                    <h:inputText id="valorPrin" value="#{operacion.valorUno}"/>
+                    <h:outputLabel value="Valor producto 2"/>
+                    <h:inputText id="valorSec" value="#{operacion.valorDos}"/> 
+                    <f:facet name="footer">
+                        <h:commandButton action="#{operacion.consumirIva()}" 
+                                         onclick="PF('dlg1').show();"
+                                         value="comprar"
+                                         id="btnSubmit">
+<!--                                         >
+                            <f:ajax execute="@form" render="panelMain grids rta"/>-->
+                        </h:commandButton> 
+                    </f:facet>      
+                    <h:outputLabel value="Sumatoria de valores"/>
+                    <h:outputLabel value="#{operacion.sumatoria}" id="rta"/>
+                    <h:outputLabel value="Valor con IVA"/>
+                    <h:outputLabel value="#{operacion.rta}" id="rta"/>
+                </h:panelGrid>
+                
+            </h:panelGroup>
+            
+        </h:form>
+        
+    </h:body>
+    
+<!--        <p:dialog header="Calculo de IVA" widgetVar="dlg1" minHeight="40">
+        <h:outputText value="Valor obtenido: {operacion.rta}" />
+        </p:dialog>-->
+</html>
+

@@ -1,0 +1,17 @@
+/* 
+    Created on : 22-feb-2018, 15:48:10
+    Author     : cgordilg
+*/
+
+.gridMain
+{
+    background-color: yellowgreen;
+    margin:0 auto;
+}
+
+#btnSubmit
+{
+    margin: 0 auto;
+    display: block;
+}
+
